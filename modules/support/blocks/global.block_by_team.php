@@ -64,7 +64,7 @@ if( ! nv_function_exists( 'nv_block_support_by_team' ) )
 
 	function nv_block_support_by_team( $block_config )
 	{
-		global $module_array_cat, $module_info, $module_name, $site_mods, $module_config, $global_config, $db;
+		global $module_info, $module_name, $site_mods, $module_config, $global_config, $db;
 		$module = $block_config['module'];
 		$mod_data = $site_mods[$module]['module_data'];
 		$mod_file = $site_mods[$module]['module_file'];
@@ -113,7 +113,7 @@ if( ! nv_function_exists( 'nv_block_support_by_team' ) )
 			$xtpl = new XTemplate( 'block_by_team.tpl', NV_ROOTDIR . '/themes/' . $block_theme . '/modules/' . $mod_file );
 			$xtpl->assign( 'TEAM', isset( $team_array[$block_config['team_id']] ) ? $team_array[$block_config['team_id']]['name'] : '' );
  
-			if( $block_config['show_team'] == 1 ) $xtpl->parse( 'main.showteam' );
+			if( $block_config['show_team'] == 1 ) $xtpl->parse( 'main.show_team' );
 				
 			foreach( $array_team_person as $loop )
 			{
